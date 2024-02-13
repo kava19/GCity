@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace GCity
 {
+
+	public struct OSMData
+	{
+		public OSMData() { }
+		public List<Road> roads { get; set; } = new List<Road>();
+	}
 	public struct Point
 	{
 		public Point(float x, float y)
