@@ -89,7 +89,7 @@ namespace GCity
 			{
 				Console.WriteLine($"Cannot parse json file: {path}"); return tile;
 			}
-			tile.roads = LoadRoads(jsonData);
+			tile.Roads = LoadRoads(jsonData);
 			Console.WriteLine($"JSON file: {path} loaded!"); return tile;
 		}
 	}
