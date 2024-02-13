@@ -6,7 +6,7 @@ namespace GCity
 		private static void Main(string[] args)
 		{
 
-			OSMData osmData = Loader.LoadOSMFromGeoJSON("map/roads.geojson");
+			Tile tile = Loader.LoadOSMFromGeoJSON("map/roads.geojson");
 			Console.WriteLine("Hello, World!");
 			Application.Run(new Program());
 		}

@@ -67,9 +67,9 @@ namespace GCity
 
 			return roads;
 		}
-		public static OSMData LoadOSMFromGeoJSON(string path)
+		public static Tile LoadOSMFromGeoJSON(string path)
 		{
-			OSMData osmData = new OSMData();
+			Tile tile = new Tile();
 			string fileData = "";
 			try
 			{
@@ -78,19 +78,19 @@ namespace GCity
 			catch (Exception e)
 			{
 				Console.WriteLine(e.Message);
-				Console.WriteLine($"Cannot load json file: {path}"); return osmData;
+				Console.WriteLine($"Cannot load json file: {path}"); return tile;
 			}
 			if (fileData == null)
 			{
-				Console.WriteLine($"Cannot load json file: {path}"); return osmData;
+				Console.WriteLine($"Cannot load json file: {path}"); return tile;
 			}
 			JsonNode jsonData = JsonNode.Parse(fileData)!;
 			if (jsonData == null)
 			{
-				Console.WriteLine($"Cannot parse json file: {path}"); return osmData;
+				Console.WriteLine($"Cannot parse json file: {path}"); return tile;
 			}
-			osmData.roads = LoadRoads(jsonData);
-			Console.WriteLine($"JSON file: {path} loaded!"); return osmData;
+			tile.roads = LoadRoads(jsonData);
+			Console.WriteLine($"JSON file: {path} loaded!"); return tile;
 		}
 	}
 }
